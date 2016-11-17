@@ -11,9 +11,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.sieunhan.github_client.fragment.LoginFragment;
+
 import com.example.sieunhan.github_client.fragment.RepoFragment;
-import com.example.sieunhan.github_client.fragment.Test;
 
 /**
  * Created by Sieu Nhan on 11/14/2016.
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         PagerAdapter adapter = new HomeFragmentPagerAdapter(
                 getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        pager.setOffscreenPageLimit(3);
+        pager.setOffscreenPageLimit(5);
         pager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
@@ -37,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
+ class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
     private final int PAGE_COUNT = 5;
-    private String titles[] = new String[] { "News", "Repositories", "Stars", "Followers", "Following" };
+    private String titles[] = new String[] {"News", "Repositories", "Stars", "Followers", "Following"};
     public HomeFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
     @Override
     public int getCount() {
-        return PAGE_COUNT; // number of pages for a ViewPager
+        return (titles.length); // number of pages for a ViewPager
     }
     @Override
     public Fragment getItem(int page) {
