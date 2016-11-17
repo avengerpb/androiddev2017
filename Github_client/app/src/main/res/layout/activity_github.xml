@@ -11,15 +11,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sieunhan.github_client.GithubActivity">
     <fragment
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:name="com.example.sieunhan.github_client.fragment.Test"/>
     <fragment
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:name="com.example.sieunhan.github_client.fragment.Test"/>
     <fragment
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:name="com.example.sieunhan.github_client.fragment.Test"/>
 </LinearLayout>
