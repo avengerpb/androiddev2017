@@ -11,9 +11,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.sieunhan.github_client.fragment.LoginFragment;
+
 import com.example.sieunhan.github_client.fragment.RepoFragment;
-import com.example.sieunhan.github_client.fragment.Test;
 
 /**
  * Created by Sieu Nhan on 11/14/2016.
@@ -28,37 +27,12 @@ public class MainActivity extends AppCompatActivity {
         PagerAdapter adapter = new HomeFragmentPagerAdapter(
                 getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        pager.setOffscreenPageLimit(3);
+        pager.setOffscreenPageLimit(5);
         pager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager);
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 
     public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
