@@ -1,25 +1,23 @@
 package com.example.sieunhan.github_client;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-
-import com.example.sieunhan.github_client.fragment.LoginFragment;
-import com.example.sieunhan.github_client.fragment.RepoFragment;
-import com.example.sieunhan.github_client.fragment.Test;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 /**
  * Created by Sieu Nhan on 11/14/2016.
  */
 
 public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,35 +32,30 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager);
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu1, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                return true;
+            default:
+                super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
 }
 
-class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
-    private final int PAGE_COUNT = 5;
-    private String titles[] = new String[] { "News", "Repositories", "Stars", "Followers", "Following" };
-    public HomeFragmentPagerAdapter(FragmentManager fm) {
-        super(fm);
-    }
-    @Override
-    public int getCount() {
-        return PAGE_COUNT; // number of pages for a ViewPager
-    }
-    @Override
-    public Fragment getItem(int page) {
-// returns an instance of Fragment corresponding to the specified page
-        switch (page) {
-            case 0: return new RepoFragment();
-            case 1: return new RepoFragment();
-            case 2: return new RepoFragment();
-        }
-        return new RepoFragment();
-    }
-    @Override
-    public CharSequence getPageTitle(int page) {
-// returns a tab title corresponding to the specified page
-        return titles[page];
-    }
-}
 
 
 
