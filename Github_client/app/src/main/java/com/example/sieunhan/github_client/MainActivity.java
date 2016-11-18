@@ -35,34 +35,60 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
+        private final int PAGE_COUNT = 5;
+        private String titles[] = new String[] { "News", "Repositories", "Stars", "Followers", "Following" };
+        public HomeFragmentPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+        @Override
+        public int getCount() {
+            return PAGE_COUNT;
+        }
+        @Override
+        public Fragment getItem(int page) {
+            switch (page) {
+                case 0: return new RepoFragment();
+                case 1: return new RepoFragment();
+                case 2: return new RepoFragment();
+            }
+            return new RepoFragment();
+        }
+        @Override
+        public CharSequence getPageTitle(int page) {
+            return titles[page];
+        }
+    }
+
 }
 
-class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
-    private final int PAGE_COUNT = 5;
-    private String titles[] = new String[] { "News", "Repositories", "Stars", "Followers", "Following" };
-    public HomeFragmentPagerAdapter(FragmentManager fm) {
-        super(fm);
-    }
-    @Override
-    public int getCount() {
-        return PAGE_COUNT; // number of pages for a ViewPager
-    }
-    @Override
-    public Fragment getItem(int page) {
-// returns an instance of Fragment corresponding to the specified page
-        switch (page) {
-            case 0: return new RepoFragment();
-            case 1: return new RepoFragment();
-            case 2: return new RepoFragment();
-        }
-        return new RepoFragment();
-    }
-    @Override
-    public CharSequence getPageTitle(int page) {
-// returns a tab title corresponding to the specified page
-        return titles[page];
-    }
-}
+
 
 
 
