@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_github);
+        setContentView(R.layout.activity_main);
 
         PagerAdapter adapter = new HomeFragmentPagerAdapter(
                 getSupportFragmentManager());
@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager);
-
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
 
     }
 
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_search:
+            case R.id.action_searching:
                 return true;
             default:
                 super.onOptionsItemSelected(item);
