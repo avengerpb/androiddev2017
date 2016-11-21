@@ -1,8 +1,10 @@
 package com.example.sieunhan.github_client;
 
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -12,13 +14,21 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
+import com.example.sieunhan.github_client.fragment.BookmarkFragment;
+import com.example.sieunhan.github_client.fragment.GistsFragment;
+import com.example.sieunhan.github_client.fragment.IssueFragment;
 import com.example.sieunhan.github_client.fragment.RepoFragment;
+import com.example.sieunhan.github_client.fragment.ReportFragment;
+
+import static android.R.id.toggle;
 
 
 /**
@@ -26,7 +36,7 @@ import com.example.sieunhan.github_client.fragment.RepoFragment;
  */
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    private ActionBarDrawerToggle toggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +51,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager);
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.setDrawerListener(toggle);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,15 +76,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             default:
                 super.onOptionsItemSelected(item);
         }
-        return true;
+        return toggle != null && toggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        android.app.FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
         if (id == R.id.nav_gists) {
             fragmentManager.beginTransaction().replace(R.id.content_frame, new GistsFragment()).commit();
@@ -80,6 +101,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (toggle != null)
+            toggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (toggle != null)
+            toggle.onConfigurationChanged(newConfig);
     }
 
     public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
