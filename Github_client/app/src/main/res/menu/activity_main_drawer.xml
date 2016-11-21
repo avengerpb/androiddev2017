@@ -3,16 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_gists"
             android:icon="@drawable/gists"
             android:title="Gists" />
         <item
+            android:id="@+id/nav_issue"
             android:icon="@drawable/issue"
             android:title="Issue Dashboard" />
         <item
+            android:id="@+id/nav_bookmarks"
             android:icon="@drawable/bookmarks"
             android:title="Bookmarks" />
     </group>
          <item
+            android:id="@+id/nav_report"
             android:icon="@drawable/report"
             android:title="Report an issue" />
 </menu>

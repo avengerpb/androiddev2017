@@ -2,15 +2,18 @@ package com.example.sieunhan.github_client;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,7 +25,7 @@ import com.example.sieunhan.github_client.fragment.RepoFragment;
  * Created by Sieu Nhan on 11/14/2016.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,28 @@ public class MainActivity extends AppCompatActivity {
             default:
                 super.onOptionsItemSelected(item);
         }
+        return true;
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+
+        if (id == R.id.nav_gists) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new GistsFragment()).commit();
+        } else if (id == R.id.nav_issue) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new IssueFragment()).commit();
+        } else if (id == R.id.nav_bookmarks) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new BookmarkFragment()).commit();
+        } else if (id == R.id.nav_report) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new ReportFragment()).commit();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
