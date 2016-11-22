@@ -5,6 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_searching">Search</string>
+    <string name="notification">Notification</string>
     <string name="sign_in_to_github">Sign in to GitHub</string>
     <string name="username_or_email">Username or Email</string>
     <string name="log_in">LOG IN</string>
