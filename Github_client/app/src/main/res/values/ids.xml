@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="nav_gists" type="id" />
-    <item name="nav_issue" type="id" />
-    <item name="content_frame" type="id" />
-</resources>

@@ -22,50 +22,50 @@
                     android:id="@+id/checkBox3" />
             </RelativeLayout>
 
-        <TextView
-            android:text="@string/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:id="@+id/textView3" />
+            <TextView
+                android:text="@string/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:id="@+id/textView3" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="@string/gist_description_hint"
-            android:id="@+id/editText" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="@string/gist_description_hint"
+                android:id="@+id/editText" />
 
-        <TextView
-            android:text="@string/file_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:id="@+id/textView4" />
+            <TextView
+                android:text="@string/file_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:id="@+id/textView4" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="@string/gist_file_name_hint"
-            android:id="@+id/editText1" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="@string/gist_file_name_hint"
+                android:id="@+id/editText1" />
 
-        <TextView
-            android:text="@string/file_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:id="@+id/textView5" />
+            <TextView
+                android:text="@string/file_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/textView5" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="@string/gist_content_hint"
-            android:id="@+id/editText2"
-            android:layout_weight="0.21" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="@string/gist_content_hint"
+                android:id="@+id/editText2"
+                android:layout_weight="0.21" />
         </LinearLayout>
 </FrameLayout>
