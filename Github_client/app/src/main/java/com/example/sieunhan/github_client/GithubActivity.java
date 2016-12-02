@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.sieunhan.github_client.fragment.Test;
+import com.example.sieunhan.github_client.user_interface.userActivity.MainActivity;
 
 public class GithubActivity extends AppCompatActivity {
 
@@ -57,4 +58,3 @@ public class GithubActivity extends AppCompatActivity {
         Log.i("log1", "This is log from onDestroy()");
     }
 }
-
