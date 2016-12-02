@@ -1,6 +1,7 @@
 package com.example.sieunhan.github_client;
 
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.AsyncTask;
@@ -113,6 +114,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+        /*switch (item.getItemId()){
+            case R.id.nav_gists:
+                Intent i = new Intent(this, GistsActivity.class);
+                this.startActivity(i);
+                break;
+            case R.id.nav_issue:
+                return true;
+            case R.id.nav_bookmarks:
+                return true;
+            case R.id.nav_report:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;*/
     }
 
     @Override
