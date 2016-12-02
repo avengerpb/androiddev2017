@@ -22,6 +22,7 @@ public class GithubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(GithubActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }
