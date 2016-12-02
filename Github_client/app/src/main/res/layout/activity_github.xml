@@ -11,18 +11,20 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        style="@style/Toolbar" />
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmls:tabMode="scrollable"/>
+        android:background="@color/color_primary">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/color_accent"
+            xmls:tabMode="scrollable"/>
+    </FrameLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

@@ -6,5 +6,12 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="background_id">#E3E3E3</color>
+    <color name="background">#F9F9F9</color>
+    <color name="background_selected">#E8E8E8</color>
     <color name="text">#1E1E1E</color>
+
+    <color name="color_primary">#3F51B5</color>
+    <color name="color_primary_dark">#1A237E</color>
+    <color name="color_accent">#64DD17</color>
+    <color name="text_light">#AEAEAE</color>
 </resources>
