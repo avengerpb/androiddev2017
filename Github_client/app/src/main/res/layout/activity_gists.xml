@@ -20,6 +20,7 @@
         android:id="@+id/gists_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         xmls:tabMode="scrollable"/>
 
     <android.support.v4.view.ViewPager
