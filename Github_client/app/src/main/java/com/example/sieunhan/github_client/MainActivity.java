@@ -2,55 +2,23 @@ package com.example.sieunhan.github_client;
 
 
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
-
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.sieunhan.github_client.fragment.BookmarkFragment;
-import com.example.sieunhan.github_client.fragment.GistsFragment;
-import com.example.sieunhan.github_client.fragment.IssueFragment;
 import com.example.sieunhan.github_client.fragment.RepoFragment;
-import com.example.sieunhan.github_client.fragment.ReportFragment;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import static android.R.id.toggle;
 
 
 /**
@@ -185,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_searching:
+            case R.id.m_search:
                 return true;
             default:
                 super.onOptionsItemSelected(item);
@@ -200,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        if (id == R.id.nav_gists) {
+        /*if (id == R.id.nav_gists) {
             fragmentManager.beginTransaction().replace(R.id.content_frame, new GistsFragment()).commit();
         } else if (id == R.id.nav_issue) {
             fragmentManager.beginTransaction().replace(R.id.content_frame, new IssueFragment()).commit();
@@ -210,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentManager.beginTransaction().replace(R.id.content_frame, new ReportFragment()).commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        drawer.closeDrawer(GravityCompat.START);*/
         return true;
     }
 
