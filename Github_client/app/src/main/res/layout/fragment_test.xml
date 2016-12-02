@@ -14,19 +14,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
+            android:text="Android Testing"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="@color/black"
             android:textSize="17dp"
             android:textStyle="bold"
-            android:text="Android-SpinKit"/>
+           />
         <TextView
+            android:text="Just some random test"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="14dp"
-            android:text="Android loading animations"/>
+           />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
