@@ -18,10 +18,10 @@ public class Test extends Fragment {
         super();
     }
 
-//    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        View v = inflater.inflate(R.layout.fragment_test, container, false);
-//        return v;
-//    }
+    /*@Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_test, container, false);
+        return v;
+    }*/
 }
