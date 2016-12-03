@@ -11,16 +11,15 @@ import android.view.ViewGroup;
 
 import com.example.sieunhan.github_client.R;
 
-
-public class GistsFragment extends Fragment {
-    public GistsFragment(){
+public class ReportFragment extends Fragment {
+    public ReportFragment() {
         super();
     }
 
 //    @Nullable
 //    @Override
 //    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        View v = inflater.inflate(R.layout.fragment_gists, container, false);
+//        View v = inflater.inflate(R.layout.fragment_report, container, false);
 //        return v;
 //    }
 }
