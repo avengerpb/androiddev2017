@@ -4,6 +4,7 @@ package com.example.sieunhan.github_client.user_interface.userActivity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -20,7 +21,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.sieunhan.github_client.R;
+import com.example.sieunhan.github_client.api.model.User;
+import com.example.sieunhan.github_client.api.service.UserService;
 import com.example.sieunhan.github_client.fragment.RepoFragment;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -29,6 +37,8 @@ import com.example.sieunhan.github_client.fragment.RepoFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ActionBarDrawerToggle toggle;
+    String API = "https://api.github.com";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.setDrawerListener(toggle);
 
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,6 +74,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.m_search:
+                String user = "avengerpb";
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("https://api.github.com")
+                        // Sử dụng GSON cho việc parse và maps JSON data tới Object
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                UserService userservice = retrofit.create(UserService.class);
+                Call<User> call = userservice.loadQuestions("avengerpb");
+                call.enqueue((Callback<User>) this);
                 return true;
             default:
                 super.onOptionsItemSelected(item);
