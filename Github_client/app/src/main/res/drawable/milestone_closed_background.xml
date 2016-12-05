@@ -14,17 +14,13 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item>
-        <shape>
-            <solid android:color="@color/list_divider_top" />
-        </shape>
-    </item>
-    <item android:top="1dp">
-        <shape>
-            <solid android:color="@color/list_divider_bottom" />
-        </shape>
-    </item>
+    <gradient
+        android:angle="270"
+        android:endColor="@color/milestone_closed_end"
+        android:startColor="@color/milestone_closed_start" />
 
-</layer-list>
+    <corners android:radius="1dp" />
+
+</shape>

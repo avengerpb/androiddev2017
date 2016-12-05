@@ -18,12 +18,17 @@
 
     <item>
         <shape>
-            <solid android:color="@color/list_divider_top" />
+            <solid android:color="@color/section_border" />
         </shape>
     </item>
-    <item android:top="1dp">
+    <item
+        android:bottom="1dp"
+        android:top="1dp">
         <shape>
-            <solid android:color="@color/list_divider_bottom" />
+            <gradient
+                android:angle="270"
+                android:endColor="@color/section_start"
+                android:startColor="@color/section_end" />
         </shape>
     </item>
 

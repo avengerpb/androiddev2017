@@ -14,17 +14,9 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item>
-        <shape>
-            <solid android:color="@color/list_divider_top" />
-        </shape>
-    </item>
-    <item android:top="1dp">
-        <shape>
-            <solid android:color="@color/list_divider_bottom" />
-        </shape>
-    </item>
+    <item android:drawable="@color/background_selected" android:state_pressed="true"/>
+    <item android:drawable="@color/diff_marker_bg"/>
 
-</layer-list>
+</selector>

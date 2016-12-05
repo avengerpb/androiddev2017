@@ -18,12 +18,31 @@
 
     <item>
         <shape>
-            <solid android:color="@color/list_divider_top" />
+            <solid android:color="@color/inset_outer" />
+
+            <corners android:radius="2dp" />
         </shape>
     </item>
-    <item android:top="1dp">
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
         <shape>
-            <solid android:color="@color/list_divider_bottom" />
+            <solid android:color="@color/inset_inner" />
+
+            <corners android:radius="1dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <shape>
+            <solid android:color="@color/inset_background" />
+
+            <corners android:radius="1dp" />
         </shape>
     </item>
 

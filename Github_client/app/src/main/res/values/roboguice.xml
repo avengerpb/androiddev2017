@@ -14,17 +14,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <item>
-        <shape>
-            <solid android:color="@color/list_divider_top" />
-        </shape>
-    </item>
-    <item android:top="1dp">
-        <shape>
-            <solid android:color="@color/list_divider_bottom" />
-        </shape>
-    </item>
-
-</layer-list>
+<resources>
+    <string-array name="roboguice_modules">
+        <item>com.example.sieunhan.github_client.GitHubModule</item>
+    </string-array>
+</resources>

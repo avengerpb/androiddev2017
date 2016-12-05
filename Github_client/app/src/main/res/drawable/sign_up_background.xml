@@ -18,12 +18,12 @@
 
     <item>
         <shape>
-            <solid android:color="@color/list_divider_top" />
+            <solid android:color="@color/sign_up_background_bottom" />
         </shape>
     </item>
-    <item android:top="1dp">
+    <item android:bottom="1dp">
         <shape>
-            <solid android:color="@color/list_divider_bottom" />
+            <solid android:color="@color/sign_up_background" />
         </shape>
     </item>
 
