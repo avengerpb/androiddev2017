@@ -29,13 +29,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+
 import com.example.sieunhan.github_client.fragment.BookmarkFragment;
 import com.example.sieunhan.github_client.fragment.GistsFragment;
 import com.example.sieunhan.github_client.fragment.IssueFragment;
@@ -77,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(myToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.setDrawerListener(toggle);
@@ -185,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_searching:
+            case R.id.m_search:
                 return true;
             default:
                 super.onOptionsItemSelected(item);
@@ -209,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_report) {
             fragmentManager.beginTransaction().replace(R.id.content_frame, new ReportFragment()).commit();
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.navigation_drawer);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
