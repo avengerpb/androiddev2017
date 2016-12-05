@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHub">
         <activity
-            android:name=".GithubActivity">
+            android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

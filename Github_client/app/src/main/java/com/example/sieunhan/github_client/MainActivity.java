@@ -23,9 +23,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -53,6 +55,11 @@ import static android.R.id.toggle;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ActionBarDrawerToggle toggle;
+    TextView userNameTV;
+    ImageView avatar;
+    Bundle extras;
+    String newstring;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +83,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.setDrawerListener(toggle);
 
+        avatar = (ImageView) findViewById(R.id.avatar);
+        userNameTV = (TextView) findViewById(R.id.user_name);
 
-    }
+        extras = getIntent().getExtras();
+        newstring = extras.getString("user_name");
+        System.out.println(newstring);
+
+        }
 
 
     @Override
