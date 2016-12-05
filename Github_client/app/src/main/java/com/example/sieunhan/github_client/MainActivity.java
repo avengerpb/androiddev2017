@@ -23,9 +23,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -53,6 +55,11 @@ import static android.R.id.toggle;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ActionBarDrawerToggle toggle;
+    TextView userNameTV;
+    ImageView avatar;
+    Bundle extras;
+    String newstring;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,99 +83,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.setDrawerListener(toggle);
 
+        avatar = (ImageView) findViewById(R.id.avatar);
+        userNameTV = (TextView) findViewById(R.id.user_name);
 
-    }
+        extras = getIntent().getExtras();
+        newstring = extras.getString("user_name");
+        System.out.println(newstring);
+
+        }
 
 
-//    private class GetContacts extends AsyncTask<Void, Void, Void> {
-//        private String TAG;
-//
-//        @Override
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-//            Toast.makeText(MainActivity.this,"Json Data is downloading",Toast.LENGTH_LONG).show();
-//        }
-//
-//        @Override
-//        protected Void doInBackground(Void... arg0) {
-//            HttpHandler sh = new HttpHandler();
-//            // Making a request to url and getting response
-//            String url = "https://api.github.com/users/avengerpb/repos";
-//            String jsonStr = sh.makeServiceCall(url);
-//
-//            Log.e(TAG, "Response from url: " + jsonStr);
-//            if (jsonStr != null) {
-//                try {
-//                    JSONObject jsonObj = new JSONObject();
-//
-//                    // Getting JSON Array node
-//                    JSONArray repos = jsonObj.getJSONArray("repos");
-//
-//                    // looping through All Contacts
-//                    for (int i = 0; i < repos.length(); i++) {
-//                        JSONObject r = repos.getJSONObject(i);
-//                        String name = r.getString("name");
-//                        String description = r.getString("description");
-////                        String email = r.getString("email");
-//                        String language = r.getString("language");
-//                        int forks_count = r.getInt("forks_count");
-//                        int watchers = r.getInt("watchers");
-//
-//                        // Phone node is JSON Object
-////                        JSONObject phone = r.getJSONObject("phone");
-////                        String mobile = phone.getString("mobile");
-////                        String home = phone.getString("home");
-////                        String office = phone.getString("office");
-//
-//                        // tmp hash map for single contact
-//                        HashMap<String, String> repo = new HashMap<>();
-//
-//                        // adding each child node to HashMap key => value
-//                        repo.put("name", name);
-//                        repo.put("description", name);
-////                        contact.put("email", email);
-//                        repo.put("language", language);
-//
-//                        // adding contact to contact list
-//                        repoList.add(repo);
-//                    }
-//                } catch (final JSONException e) {
-//                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-//                    runOnUiThread(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            Toast.makeText(getApplicationContext(),
-//                                    "Json parsing error: " + e.getMessage(),
-//                                    Toast.LENGTH_LONG).show();
-//                        }
-//                    });
-//
-//                }
-//
-//            } else {
-//                Log.e(TAG, "Couldn't get json from server.");
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Toast.makeText(getApplicationContext(),
-//                                "Couldn't get json from server. Check LogCat for possible errors!",
-//                                Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//            }
-//
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void result) {
-//            super.onPostExecute(result);
-//            ListAdapter adapter = new SimpleAdapter(MainActivity.this, repoList,
-//                    R.layout.repositories, new String[]{ "name","description","language"},
-//                    new int[]{R.id.name, R.id.description,R.id.language});
-//            lv.setAdapter(adapter);
-//        }
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

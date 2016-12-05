@@ -36,7 +36,7 @@
             android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="21dp"
-            android:id="@+id/editText3" />
+            android:id="@+id/user_name" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -44,9 +44,9 @@
             android:inputType="textPassword"
             android:hint="@string/password"
             android:ems="15"
-            android:layout_below="@+id/editText3"
-            android:layout_alignRight="@+id/editText3"
-            android:layout_alignEnd="@+id/editText3"
+            android:layout_below="@+id/user_name"
+            android:layout_alignRight="@+id/user_name"
+            android:layout_alignEnd="@+id/user_name"
             android:layout_marginTop="38dp"
             android:id="@+id/editText4" />
 
