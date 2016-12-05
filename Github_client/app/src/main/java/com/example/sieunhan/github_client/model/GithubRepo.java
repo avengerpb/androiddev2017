@@ -20,7 +20,7 @@ public class GithubRepo {
         this.setName(name);
     }
 
-    String getName(){
+    public String getName(){
         return name;
     }
 
