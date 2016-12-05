@@ -1,11 +1,18 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> rebuilt-version
 package com.example.sieunhan.github_client.api.model;
 
 import java.util.Date;
 
+<<<<<<< HEAD
 /**
  * Created by dannyle on 03/12/2016.
  */
 
+=======
+>>>>>>> rebuilt-version
 public class TimelineEvent {
     public static final String EVENT_ASSIGNED = "assigned";
     public static final String EVENT_CLOSED = "closed";
@@ -29,6 +36,7 @@ public class TimelineEvent {
     public static final String EVENT_UNLOCKED = "unlocked";
     public static final String EVENT_UNSUBSCRIBED = "unsubscribed";
 
+<<<<<<< HEAD
 
     public long id;
 
@@ -62,3 +70,25 @@ public class TimelineEvent {
 
 
 
+=======
+    public long id;
+
+    public User actor;
+
+    public String commit_id;
+
+    public String event;
+
+    public Date created_at;
+
+    public Date updated_at;
+
+    public Label label;
+
+    public User assignee;
+
+    public Milestone milestone;
+
+    public Rename rename;
+}
+>>>>>>> rebuilt-version

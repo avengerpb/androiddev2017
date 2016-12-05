@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> rebuilt-version
 package com.example.sieunhan.github_client.api;
 
 import com.squareup.moshi.FromJson;
@@ -10,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+<<<<<<< HEAD
 /**
  * Created by dannyle on 03/12/2016.
  */
@@ -18,6 +23,11 @@ public class DateAdapter {
     private final DateFormat[] formats = new DateFormat[3];
 
 
+=======
+public class DateAdapter {
+    private final DateFormat[] formats = new DateFormat[3];
+
+>>>>>>> rebuilt-version
     public DateAdapter() {
         formats[0] = new SimpleDateFormat("yyyy-MM-dd\'T\'HH:mm:ss\'Z\'");
         formats[1] = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z");
@@ -28,13 +38,19 @@ public class DateAdapter {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> rebuilt-version
     @ToJson
     String toJson(Date date) {
         return formats[0].format(date);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> rebuilt-version
     @FromJson
     Date fromJson(String date) {
         for (DateFormat format : formats) {
@@ -44,6 +60,7 @@ public class DateAdapter {
             }
         }
 
+<<<<<<< HEAD
 
         throw new JsonDataException();
     }
@@ -53,3 +70,8 @@ public class DateAdapter {
 
 
 
+=======
+        throw new JsonDataException();
+    }
+}
+>>>>>>> rebuilt-version

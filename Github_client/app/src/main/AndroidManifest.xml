@@ -16,7 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHub">
         <activity
+<<<<<<< HEAD
             android:name=".user_interface.GithubActivity">
+=======
+            android:name=".LoginActivity">
+>>>>>>> rebuilt-version
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
